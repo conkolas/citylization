@@ -1,0 +1,1 @@
+DATABASE_NAME = 'auction_db'

@@ -1,0 +1,55 @@
+%html{:lang => 'eng'}
+  %head
+    = partial :style
+    %script{ :src => "//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"}
+  %body
+    - success = response[:success]
+    - db_error = response[:errors][:database]
+    - errors = response[:errors][:validation]
+
+    - if success != 1 || !errors.empty?
+      - if !db_error.empty?
+        %h4 #{db_error}
+
+      %form.form{ :action => '', :method => 'POST'}
+        %fieldset
+          %div.row.center
+            %h3 Sign up
+          %div.row
+            %div.input.half
+              %label{:for => "name"} First name:
+              %input{:type => "text", :value => params["name"], :name => "name", :class => "text name #{(errors.find_all { |e| e[:class] == "name"}.count > 0) ? 'error' : ''}"}
+              %div.error-message
+                = (errors.find_all { |e| e[:class] == "name"}.count > 0) ? errors.find_all { |e| e[:class] == "name"}.first[:message] : ''
+            %div.input.half
+              %label{:for => "surname"} Last name:
+              %input{:type => "text", :value => params["surname"], :name => "surname", :class => "text surname #{(errors.find_all { |e| e[:class] == "surname"}.count > 0) ? 'error' : ''}"}
+              %div.error-message
+                = (errors.find_all { |e| e[:class] == "surname"}.count > 0) ? errors.find_all { |e| e[:class] == "surname"}.first[:message] : ''
+          %div.row
+            %div.input.half
+              %label{:for => "password"} Password:
+              %input{:type => "password", :name => "password", :class => "text password #{(errors.find_all { |e| e[:class] == "password"}.count > 0) ? 'error' : ''}"}
+              %div.error-message
+                = (errors.find_all { |e| e[:class] == "password"}.count > 0) ? errors.find_all { |e| e[:class] == "password"}.first[:message] : ''
+            %div.input.half
+              %label{:for => "password_confirm"} Confirm password:
+              %input{:type => "password", :name => "password_confirm", :class => "text password_confirm #{(errors.find_all { |e| e[:class] == "password_confirm"}.count > 0) ? 'error' : ''}"}
+              %div.error-message
+                = (errors.find_all { |e| e[:class] == "password_confirm"}.count > 0) ? errors.find_all { |e| e[:class] == "password_confirm"}.first[:message] : ''
+          %div.row
+            %div.input.full
+              %label{:for => "email"} Email:
+              %input{:type => "text", :value => params["email"], :name => "email", :class => "text #{(errors.find_all { |e| e[:class] == "email"}.count > 0) ? 'error' : ''}"}
+              %div.error-message
+                = (errors.find_all { |e| e[:class] == "email"}.count > 0) ? errors.find_all { |e| e[:class] == "email"}.first[:message] : ''
+        %input{:type => "submit", :value => "Sign up", :class => "button"}
+        %div{:class => "button lightblue"}
+          %a{:href => "/login"} Or sign in
+    -else
+      %fieldset
+        %div.row.center
+          %h3 Successfully signed up!
+      %div{:class => "button lightblue"}
+        %a{:href => "/login"} Login
+    = partial :sockets

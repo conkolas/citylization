@@ -1,0 +1,46 @@
+:javascript
+    var WS = {
+
+        socket: null,
+        host: "ws://192.168.0.103:3001",
+
+        connect: function() {
+            try {
+                WS.socket = new WebSocket(WS.host);
+
+                WS.log("Socket State: " + WS.socket.readyState);
+
+                WS.socket.onopen = function () {
+                    WS.log("Socket Status: " + WS.socket.readyState + " (open)");
+                }
+
+                WS.socket.onclose = function () {
+                    WS.log("Socket Status: " + WS.socket.readyState + " (closed)");
+                }
+
+                WS.socket.onmessage = function (msg) {
+                    WS.addMessage(msg.data);
+                }
+            } catch (exception) {
+                WS.log("Error: " + exception);
+            }
+        },
+        send: function (msg) {
+          try {
+            WS.socket.send(msg);
+            WS.log("Sent: " + msg)
+          } catch(exception) {
+            WS.log("Failed To Send")
+          }
+        },
+        addMessage: function(msg) {
+            $('.messages ul').append('<li>'+msg+'</li>');
+        },
+        log: function(msg) {
+            console.log(msg);
+        }
+    }
+
+    $(function() {
+        WS.connect();
+    });

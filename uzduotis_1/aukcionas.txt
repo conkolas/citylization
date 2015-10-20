@@ -1,0 +1,57 @@
+Aistis Matulis (s1212478)
+
+I.  Aukcionas: 
+    Paremtas gyvu bendravimu su serveriu (sockets). Realaus laiko statymai.
+
+
+II-III.
+
+    Esminės esybės
+
+    1. Serveris:
+        * praneša klientams apie pasikeitusią aukciono (kuriame dalyvauja) kainą
+        * praneša klientams apie laimėtą aukcioną
+        * praneša klientams apie pasibaigusį aukcioną
+        * praneša klientams apie parduotą prekę
+        * praneša klientams apie gautas žinutes
+
+    2. Klientas:
+        * susikuria savo sąskaitą
+        * prisijungia prie savo sąskaitos
+        * redaguoja savo sąskaitą
+        * gali sukurti savo prekę
+        * gali pradėti aukcioną
+        * gali statyti ne savo aukcionuose
+        * gali siūlyti kainą
+        * gali stabdyti aukcioną priėmus siūlymą
+        * gali įvertinti pardavėją
+        * gali įvertinti pirkėją
+        * susisiekti su pardavėju
+        * susisiekti su pirkėju
+
+    3. Aukcionas:
+        * rodo tikslų aukciono pabaigos laiką
+        * rodo statymų skaičių
+        * rodo prekės aprašymą
+        * rodo pardavėją ir jo aprašymą
+
+    4. Prekė:
+        * turi pavadinimą
+        * turi aprašymą
+        * turi pradinę kainą
+        * turi siuntimo kainą
+
+    5. Prekiu krepšelis:
+        * rodo stebimus aukcionus
+        * rodo laimėtus aukcionus
+        * rodo parduotas prekes
+        * rodo išleistus pinigus
+        * rodo uždirbtus pinigus
+
+
+IV.
+
+    Aistis Matulis (s1212478)
+
+
+

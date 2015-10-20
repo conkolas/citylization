@@ -1,0 +1,12 @@
+source 'https://rubygems.org'
+gem 'rspec'
+gem 'mongo', '~> 2.1'
+gem 'bson', '~> 3.0'
+gem 'simplecov', :require => false, :group => :test
+gem 'sinatra'
+gem 'sinatra-partial'
+gem 'sinatra-reloader'
+gem 'haml'
+gem 'thin'
+gem 'em-websocket'
+gem 'sass'

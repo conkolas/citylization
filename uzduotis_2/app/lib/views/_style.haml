@@ -1,0 +1,93 @@
+%style(type="text/css")
+:sass
+  .form
+    :width auto
+    :max-width 900px
+    :margin 0 auto
+    :margin-top 50px
+
+  fieldset
+    :padding 50px 20px
+  .row
+    :width 100%
+    :display flex
+    :flex-direction row
+    :justify-content space-between
+    :margin-bottom 20px
+    :min-height 80px
+
+    &.center
+      :justify-content center
+      :text-align center
+
+    h3
+      :width auto
+      :text-align center
+      :font-size 26px
+      :font-family "Helvetica Neue", Arial, Helvetica, sans-serif
+
+  .input
+    :text-transform uppercase
+    :font-size 12px
+
+    &.full
+      :width 100%
+    &.half
+      :width 45%
+    :display flex
+    :flex-direction column
+    :justify-content flex-start
+
+    input
+      :display block
+      :height 45px
+      :padding 5px 15px
+      &.error
+        :border 2px solid darkred
+
+  .error-message
+    :color red
+
+  .button
+    :border none
+    :outline none
+    :margin-top 20px
+    :display flex
+    :flex-direction row
+    :justify-content center
+    :width 100%
+    :box-sizing border-box
+    :height 50px
+    :padding 5px 15px
+    :text-transform uppercase
+    :font-family Arial
+    :text-align center
+    :cursor pointer
+    :background-color rgb(221, 221, 221)
+    :border 2px solid rgb(221, 221, 221)
+    :transition background-color .3s ease
+    :position relative
+    :color #111111
+    :font-size 16px
+    :margin-bottom 20px
+
+    &.lightblue
+      :background-color lightblue
+    &:hover
+      :background-color #ffffff
+      :border 2px solid rgb(221, 221, 221)
+
+    a
+      :font-size 12px
+      :color #111111
+      :text-decoration none
+      :position absolute
+      :top 0
+      :left 0
+      :width 100%
+      :height 100%
+      :display flex
+      :flex-direction column
+      :justify-content center
+
+
